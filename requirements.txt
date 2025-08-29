@@ -1,0 +1,1 @@
+numpy paho-mqtt python-dotenv adafruit-circuitpython-shtc3 adafruit-circuitpython-ads1x15 requests matplotlib Rpi.GPIO
