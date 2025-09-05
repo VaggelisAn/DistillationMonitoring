@@ -1,9 +1,9 @@
-#### Internet Of Things - ECE490 ####
+#### Internet Of Things - ECE490 - University of Thessaly ####
 ### Team 15 - Nikoleta Tsavlidou, Evangelos Ananiadis ###
 ### Alcohol batch quality prediction and warning system ###
 In this project we created a system that monitors the batch quality of an alcoholic beverage during a distillation process.
 Our implementation was focused on tsipouro distillation, since it's one of the larger exports of the Thessalia region, but can easily be modified for most distillation processes, be it for alcohol, or otherwise.
-
+![project description](iot_project_description.jpg)
 In our implementation we monitor the batch quality of tsipouro by measuring the temperature and methanol levels within the distillation pot on an end device, specifically the Raspberry Pi 4B (read_sensors.py). The end device uploads the temperature (in Celsius) and the methanol (in ppm) readings on a MQTT database (end_device.py). From there our laptop is listening for readings and gathers them, processes them in order to assess quality, plots them and then uploads a score and a status code for the measurements to the database (subscriber.py). If the score is below the acceptable levels, the status changes to a warning. The end device then receives the score and the status code and if the quality is not up to standards, it warns the producer. At this moment the warning is done with a flashing LED, but in future revisions it could be done through a phone notification.
 
 Batch quality is assessed by calculating the average of the temperature score and the methanol score. 
